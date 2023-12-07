@@ -37,11 +37,54 @@ layers:
     - .
     - /
     - {t: '$$mdi:apple-keyboard-shift$$', h: '$$mdi:gesture-tap-hold$$', s: '$$mdi:apple-keyboard-caps$$'}
+    - {t: SYMBOLS, h: '$$mdi:gesture-tap-hold$$'}
+    - {t: FN__NUM, h: '$$mdi:gesture-tap-hold$$'}
+    - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-command$$', s: CDH_BT}
+    - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-control$$', s: CDH_BT}
+  - - {t: BT__NAV, h: '$$mdi:gesture-tap-hold$$'}
     - {t: '$$mdi:apple-keyboard-option$$', h: '$$mdi:gesture-tap-hold$$'}
-    - {t: '$$mdi:close-box$$', h: '$$mdi:apple-keyboard-control$$', s: BT__NAV}
-    - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-command$$', s: FN__NUM}
-    - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-command$$', s: SYMBOLS}
-  - - {t: '$$mdi:close-box$$', h: '$$mdi:apple-keyboard-control$$', s: CDH_BT}
+  CDH__BT:
+  - - {t: '$$mdi:keyboard-esc$$', s: '$$mdi:tilde$$'}
+    - Q
+    - W
+    - F
+    - P
+    - B
+    - J
+    - L
+    - U
+    - Y
+  - - ;
+    - {t: '$$mdi:backspace$$', s: '$$mdi:backspace-reverse-outline$$', type: backspace}
+    - {t: '$$mdi:keyboard-tab$$', s: '$$mdi:keyboard-tab-reverse$$'}
+    - {t: A, h: '$$mdi:apple-keyboard-control$$'}
+    - {t: R, h: '$$mdi:apple-keyboard-option$$'}
+    - {t: S, h: '$$mdi:apple-keyboard-command$$'}
+    - {t: T, h: '$$mdi:apple-keyboard-shift$$'}
+    - G
+    - M
+    - {t: N, h: '$$mdi:apple-keyboard-shift$$'}
+  - - {t: E, h: '$$mdi:apple-keyboard-command$$'}
+    - {t: I, h: '$$mdi:apple-keyboard-option$$'}
+    - {t: O, h: '$$mdi:apple-keyboard-control$$'}
+    - '$$mdi:keyboard-return$$'
+    - {t: '$$mdi:apple-keyboard-shift$$', h: '$$mdi:gesture-tap-hold$$', s: '$$mdi:apple-keyboard-caps$$'}
+    - Z
+    - X
+    - C
+    - D
+    - V
+  - - K
+    - H
+    - ','
+    - .
+    - /
+    - {t: '$$mdi:apple-keyboard-shift$$', h: '$$mdi:gesture-tap-hold$$', s: '$$mdi:apple-keyboard-caps$$'}
+    - {t: SYMBOLS, h: '$$mdi:gesture-tap-hold$$'}
+    - {t: FN__NUM, h: '$$mdi:gesture-tap-hold$$'}
+    - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-command$$', s: CDH_BT}
+    - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-control$$', s: CDH_BT}
+  - - {t: BT__NAV, h: '$$mdi:gesture-tap-hold$$'}
     - {t: '$$mdi:apple-keyboard-option$$', h: '$$mdi:gesture-tap-hold$$'}
   FN__NUM:
   - [{t: '`', s: '$$mdi:tilde$$'}, F1, F2, F3, F4, '$$mdi:close-box$$', /, '7', '8', '9']
@@ -71,12 +114,21 @@ layers:
     - '3'
     - +
     - {t: '$$mdi:apple-keyboard-shift$$', h: '$$mdi:gesture-tap-hold$$', s: '$$mdi:apple-keyboard-caps$$'}
+#    - {t: '$$mdi:apple-keyboard-option$$', h: '$$mdi:gesture-tap-hold$$'}
+#    - {t: '$$mdi:close-box$$', h: '$$mdi:apple-keyboard-control$$', s: BT__NAV}
+#    - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-command$$', s: FN__NUM}
+#    - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-command$$', s: SYMBOLS}
+#  - - {t: '$$mdi:close-box$$', h: '$$mdi:apple-keyboard-control$$', s: CDH_BT}
+#    - {t: '$$mdi:apple-keyboard-option$$', h: '$$mdi:gesture-tap-hold$$'}
+
+    - {t: SYMBOLS, h: '$$mdi:gesture-tap-hold$$'}
+    - {t: '', type: 'held'}
+    - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-command$$', s: CDH_BT}
+    - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-control$$', s: CDH_BT}
+  - - {t: BT__NAV, h: '$$mdi:gesture-tap-hold$$'}
     - {t: '$$mdi:apple-keyboard-option$$', h: '$$mdi:gesture-tap-hold$$'}
-    - {t: '$$mdi:close-box$$', h: '$$mdi:apple-keyboard-control$$', s: BT__NAV}
-    - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-command$$', s: FN__NUM}
-    - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-command$$', s: SYMBOLS}
-  - - {t: '$$mdi:close-box$$', h: '$$mdi:apple-keyboard-control$$', s: CDH_BT}
-    - {t: '$$mdi:apple-keyboard-option$$', h: '$$mdi:gesture-tap-hold$$'}
+
+
   SYMBOLS:
   - - {t: '`', s: '$$mdi:tilde$$'}
     - '!'
@@ -99,7 +151,7 @@ layers:
     - '-'
     - {t: '=', h: '$$mdi:apple-keyboard-shift$$'}
   - - {t: '[', h: '$$mdi:apple-keyboard-command$$'}
-    - {t: '[', h: '$$mdi:apple-keyboard-option$$'}
+    - {t: ']', h: '$$mdi:apple-keyboard-option$$'}
     - {t: \, h: '$$mdi:apple-keyboard-control$$'}
     - '$$mdi:keyboard-return$$'
     - {t: '$$mdi:apple-keyboard-shift$$', h: '$$mdi:gesture-tap-hold$$', s: '$$mdi:apple-keyboard-caps$$'}
@@ -156,49 +208,6 @@ layers:
     - '$$mdi:close-box$$'
     - '$$mdi:close-box$$'
     - '$$mdi:close-box$$'
-    - {t: '$$mdi:apple-keyboard-shift$$', h: '$$mdi:gesture-tap-hold$$', s: '$$mdi:apple-keyboard-caps$$'}
-    - {t: '$$mdi:apple-keyboard-option$$', h: '$$mdi:gesture-tap-hold$$'}
-    - {t: '$$mdi:close-box$$', h: '$$mdi:apple-keyboard-control$$', s: BT__NAV}
-    - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-command$$', s: FN__NUM}
-    - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-command$$', s: SYMBOLS}
-  - - {t: '$$mdi:close-box$$', h: '$$mdi:apple-keyboard-control$$', s: CDH_BT}
-    - {t: '$$mdi:apple-keyboard-option$$', h: '$$mdi:gesture-tap-hold$$'}
-  CDH__BT:
-  - - {t: '$$mdi:keyboard-esc$$', s: '$$mdi:tilde$$'}
-    - Q
-    - W
-    - F
-    - P
-    - B
-    - J
-    - L
-    - U
-    - Y
-  - - ;
-    - {t: '$$mdi:backspace$$', s: '$$mdi:backspace-reverse-outline$$', type: backspace}
-    - {t: '$$mdi:keyboard-tab$$', s: '$$mdi:keyboard-tab-reverse$$'}
-    - {t: A, h: '$$mdi:apple-keyboard-control$$'}
-    - {t: R, h: '$$mdi:apple-keyboard-option$$'}
-    - {t: S, h: '$$mdi:apple-keyboard-command$$'}
-    - {t: T, h: '$$mdi:apple-keyboard-shift$$'}
-    - G
-    - M
-    - {t: N, h: '$$mdi:apple-keyboard-shift$$'}
-  - - {t: E, h: '$$mdi:apple-keyboard-command$$'}
-    - {t: I, h: '$$mdi:apple-keyboard-option$$'}
-    - {t: O, h: '$$mdi:apple-keyboard-control$$'}
-    - '$$mdi:keyboard-return$$'
-    - {t: '$$mdi:apple-keyboard-shift$$', h: '$$mdi:gesture-tap-hold$$', s: '$$mdi:apple-keyboard-caps$$'}
-    - Z
-    - X
-    - C
-    - D
-    - V
-  - - K
-    - H
-    - ','
-    - .
-    - /
     - {t: '$$mdi:apple-keyboard-shift$$', h: '$$mdi:gesture-tap-hold$$', s: '$$mdi:apple-keyboard-caps$$'}
     - {t: '$$mdi:apple-keyboard-option$$', h: '$$mdi:gesture-tap-hold$$'}
     - {t: '$$mdi:close-box$$', h: '$$mdi:apple-keyboard-control$$', s: BT__NAV}
