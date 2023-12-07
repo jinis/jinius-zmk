@@ -296,7 +296,7 @@
       quick-tap-ms = <QUICK_TAP_MS>;
       require-prior-idle-ms = <150>;
       hold-trigger-on-release;
-    }
+    };
     /***********************************************
      ** Thumb Mod Tap: Hold to modifier, Tap to key press
      ** Holding the key will activate the modifier and tapping activates key press
@@ -313,7 +313,7 @@
       quick-tap-ms = <QUICK_TAP_MS>;
       require-prior-idle-ms = <150>;
       hold-trigger-on-release;
-    }
+    };
     /***********************************************
      **  Smart Shift Key: As explained here: https://github.com/minusfive/zmk-config#smart-shift
      **  This configuration is for the left split keyboard
