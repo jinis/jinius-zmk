@@ -510,6 +510,52 @@
       tapping-term-ms = <200>;
       bindings = <&kp LCTRL>, <&sk LCTRL>, <&tog CDH>;
     };
+    
+    
+    
+    /***********************************************
+     ** Thumb Mod Sticky Tap: Hold to modifier, Tap to sticky key press
+     ** Holding the key will activate the modifier and tapping activates the sticky key press
+     **   hold: Modifier
+     **   tap: sticky key-press
+     ***********************************************/
+    tmst: thumb_mod_sticky_tap {
+      label = "THUMB_MOD_TAP";
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      bindings = <&kp>, <&sk>;
+      flavor = "balanced";
+      tapping-term-ms = <280>;
+      quick-tap-ms = <QUICK_TAP_MS>;
+      require-prior-idle-ms = <150>;
+      hold-trigger-on-release;
+    };
+    /***********************************************
+     **  ALT/OPT LAYER COLEMAKDH: On the right key board
+     **     tap: sticky key alt/opt
+     **     hold: alt/opt
+     **     double tap: toggle layer
+     ***********************************************/
+    ao_cdh_r: alt_opt_cdh_right {
+      label = "ALT_OPT_COLEMAKDH_RIGHT";
+      compatible = "zmk,behavior-tap-dance";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&tmst RALT RALT>, <&tog CDH>;
+    };
+    /***********************************************
+     **  ALT/OPT LAYER COLEMAKDH: On the left key board
+     **     tap: sticky key alt/opt
+     **     hold: alt/opt
+     **     double tap: toggle layer
+     ***********************************************/
+    ao_cdh_l: alt_opt_cdh_left {
+      label = "ALT_OPT_COLEMAKDH_RIGHT";
+      compatible = "zmk,behavior-tap-dance";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&tmst LALT LALT>, <&tog CDH>;
+    };
   };
   // BEHAVIOR DEFINITIONS - END ************************************************
 // BEHAVIOR - ENDS *************************************************************
@@ -566,7 +612,7 @@
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
 //                                                 ├─  36 <LH2>   ─┼─  37 <LH1>   ─┼─  38 <LH0>   ─┤   ├─  39 <RH0>   ─┼─  40 <RH1>   ─┼─  41 <RH2>   ─┤
 //                                                 ├─ ALT/OPT/SYM ─┼─  CTRL/FNUM  ─┼─   SPC/CMD   ─┤   ├─   SPC/CMD   ─┼─  CTRL/BTNV  ─┼─ ALT/OPT/CDH ─┤
-                                                    &mosm SYM LALT &mosm FNUM LCTRL &tmt LGUI SPACE     &tmt RGUI SPACE &mosm BTNV LCTRL    &c_cdh_r
+                                                    &mosm SYM LALT &mosm FNUM LCTRL &tmt LGUI SPACE     &tmt RGUI SPACE &mosm BTNV LCTRL   &ao_cdh_r
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
 
 
@@ -597,7 +643,7 @@
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
 //                                                 ├─  36 <LH2>   ─┼─  37 <LH1>   ─┼─  38 <LH0>   ─┤   ├─  39 <RH0>   ─┼─  40 <RH1>   ─┼─  41 <RH2>   ─┤
 //                                                 ├─ ALT/OPT/SYM ─┼─  CTRL/FNUM  ─┼─   SPC/CMD   ─┤   ├─   SPC/CMD   ─┼─  CTRL/BTNV  ─┼─ ALT/OPT/CDH ─┤
-                                                    &mosm SYM LALT &mosm FNUM LCTRL &tmt LGUI SPACE     &tmt RGUI SPACE &mosm BTNV RCTRL    &c_cdh_r
+                                                    &mosm SYM LALT &mosm FNUM LCTRL &tmt LGUI SPACE     &tmt RGUI SPACE &mosm BTNV RCTRL   &ao_cdh_r
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
 
 
@@ -627,7 +673,7 @@
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
 //                                                 ├─  36 <LH2>   ─┼─  37 <LH1>   ─┼─  38 <LH0>   ─┤   ├─  39 <RH0>   ─┼─  40 <RH1>   ─┼─  41 <RH2>   ─┤
 //                                                 ├─   ALT/OPT   ─┼─    ___      ─┼─   SPC/CMD   ─┤   ├─   SPC/CMD   ─┼─  CTRL/BTNV  ─┼─   ALT/OPT   ─┤
-                                                       &kp LALT          ___        &tmt LGUI SPACE     &tmt RGUI SPACE    &kp RCTRL       &kp RALT
+                                                    &tmst LALT LALT      ___        &tmt LGUI SPACE    &tmt RGUI SPACE &tmst RCTRL RCTRL &tmst RALT RALT
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
 
 
@@ -656,7 +702,7 @@
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
 //                                                 ├─  36 <LH2>   ─┼─  37 <LH1>   ─┼─  38 <LH0>   ─┤   ├─  39 <RH0>   ─┼─  40 <RH1>   ─┼─  41 <RH2>   ─┤
 //                                                 ├─     ___     ─┼─     CTRL    ─┼─     CMD     ─┤   ├─ SPC/CMD/FN  ─┼─     CTRL    ─┼─   ALT/OPT   ─┤
-                                                          ___          &kp LCTRL    &tmt LGUI SPACE     &tmt RGUI SPACE    &kp RCTRL       &kp RALT
+                                                          ___      &tmst LCRTL LCTRL &tmt LGUI SPACE    &tmt RGUI SPACE &tmst RCTRL RCTRL &tmst RALT RALT
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
 
 
@@ -685,7 +731,7 @@
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
 //                                                 ├─  36 <LH2>   ─┼─  37 <LH1>   ─┼─  38 <LH0>   ─┤   ├─  39 <RH0>   ─┼─  40 <RH1>   ─┼─  41 <RH2>   ─┤
 //                                                 ├─   ALT/OPT   ─┼─     CTRL    ─┼─   SPC/CMD   ─┤   ├─   SPC/CMD   ─┼─     ___     ─┼─   ALT/OPT   ─┤
-                                                       &kp LALT        &kp LCTRL    &tmt LGUI SPACE     &tmt RGUI SPACE       ___          &kp RALT    
+                                                   &tmst LALT LALT &tmst LCRTL LCTRL &tmt LGUI SPACE    &tmt RGUI SPACE       ___       &tmst RALT RALT
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
 
 
