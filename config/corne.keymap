@@ -256,10 +256,10 @@
       #binding-cells = <2>;
       bindings = <&kp>, <&kp>;
       flavor = "balanced";
-      tapping-term-ms = <280>;
-      quick-tap-ms = <QUICK_TAP_MS>;
-      require-prior-idle-ms = <150>;
-      hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
+      tapping-term-ms = <200>;
+      quick-tap-ms = <175>;
+      require-prior-idle-ms = <125>;
+      hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41>;
       hold-trigger-on-release;
     };
     /***********************************************
@@ -274,9 +274,9 @@
       #binding-cells = <2>;
       bindings = <&kp>, <&bt>;
       flavor = "balanced";
-      tapping-term-ms = <280>;
-      quick-tap-ms = <QUICK_TAP_MS>;
-      require-prior-idle-ms = <150>;
+      tapping-term-ms = <200>;
+      quick-tap-ms = <175>;
+      require-prior-idle-ms = <125>;
       hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
       hold-trigger-on-release;
     };
@@ -293,8 +293,8 @@
       bindings = <&mo>, <&sk>;
       flavor = "balanced";
       tapping-term-ms = <280>;
-      quick-tap-ms = <QUICK_TAP_MS>;
-      require-prior-idle-ms = <150>;
+      quick-tap-ms = <175>;
+      require-prior-idle-ms = <125>;
       hold-trigger-on-release;
     };
     /***********************************************
@@ -310,8 +310,8 @@
       bindings = <&kp>, <&kp>;
       flavor = "balanced";
       tapping-term-ms = <280>;
-      quick-tap-ms = <QUICK_TAP_MS>;
-      require-prior-idle-ms = <150>;
+      quick-tap-ms = <175>;
+      require-prior-idle-ms = <125>;
       hold-trigger-on-release;
     };
     /***********************************************
