@@ -260,7 +260,7 @@
       quick-tap-ms = <175>;
       require-prior-idle-ms = <125>;
       hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41>;
-      hold-trigger-on-release = true;
+      hold-trigger-on-release;
     };
     /***********************************************
      **  Homerow mod for left split keyboard using Bluetooth profile selection 
@@ -604,8 +604,8 @@
        &kp GRAVE        &kp F1          &kp F2          &kp F3          &kp F4            XXX             &kp FSLH         &kp N7          &kp N8          &kp N9          &kp STAR        &bkspc_del
 // ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
 // ├─  12 <LM5>   ─┼─  13 <LM4>   ─┼─  14 <LM3>   ─┼─  15 <LM2>   ─┼─  16 <LM1>   ─┼─  17 <LM0>   ─┤   ├─  18 <RM0>   ─┼─  19 <RM1>   ─┼─  20 <RM2>   ─┼─  21 <RM3>   ─┼─  22 <RM4>   ─┼─  23 <RM5>   ─┤
-// ├─     TAB     ─┼─  LCTRL / F5 ─┼─  LALT / F6  ─┼─  LGUI / F7  ─┼─  LSHFT / F8 ─┼─     NONE    ─┤   ├─      .      ─┼─       4     ─┼─       5     ─┼─       6     ─┼─       -     ─┼─    RETURN   ─┤
-        &kp TAB      &hml LCTRL F5    &hml LALT F6    &hml LGUI F7   &hml LSHFT F8        XXX             &kp DOT          &kp N4          &kp N5          &kp N6         &kp MINUS         &kp RET
+// ├─     TAB     ─┼─  LCTRL / F5 ─┼─  LALT / F6  ─┼─  LGUI / F7  ─┼─  LSHFT / F8 ─┼─    LSHFT    ─┤   ├─      .      ─┼─       4     ─┼─       5     ─┼─       6     ─┼─       -     ─┼─    RETURN   ─┤
+        &kp TAB      &hml LCTRL F5    &hml LALT F6    &hml LGUI F7   &hml LSHFT F8     &kp LSHFT           &kp DOT          &kp N4          &kp N5          &kp N6         &kp MINUS         &kp RET
 // ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
 // ├─  24 <LB5>   ─┼─  25 <LB4>   ─┼─  26 <LB3>   ─┼─  27 <LB2>   ─┼─  28 <LB1>   ─┼─  29 <LB0>   ─┤   ├─  30 <RB0>   ─┼─  31 <RB1>   ─┼─  32 <RB2>   ─┼─  33 <RB3>   ─┼─  34 <RB4>   ─┼─  35 <RB5>   ─┤
 // ├─ SMART SHIFT ─┼─      F9     ─┼─     F10     ─┼─      F11    ─┼─      F12    ─┼─     NONE    ─┤   ├─      0      ─┼─      1      ─┼─      2      ─┼─      3      ─┼─      +      ─┼─ SMART SHIFT ─┤
