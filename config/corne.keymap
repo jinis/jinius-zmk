@@ -40,9 +40,9 @@
 // DEFINES KEY TYPE ALIAS - ENDS ***********************************************
 
 // DEFINES GLOBAL SETTINGS - START *********************************************
-#define TAPPING_TERM_MS = 280
+#define TAPPING_TERM_MS 280
 #define QUICK_TAP_MS 175
-#define REQUIRE_PRIOR_IDLE_MS = 125
+#define REQUIRE_PRIOR_IDLE_MS 125
 // DEFINES GLOBAL SETTINGS - ENDS **********************************************
 
 // DEFINES KEY CONFIGURATION SETTINGS - START **********************************
