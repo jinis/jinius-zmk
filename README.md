@@ -14,14 +14,22 @@ I use this for my work and personal Mac and my Old Windows laptop revitalized us
 > 
 
 ---
+## Hightligh [v2.2.0]
+- Switched to [Momentary Layers](https://zmk.dev/docs/behaviors/layers#momentary-layer) from [Toggle Layer](https://zmk.dev/docs/behaviors/layers#toggle-layer)
+- Updated the [Timeless homerow mods](https://github.com/urob/zmk-config#timeless-homerow-mods) and removed the `hold-trigger-on-release` configuration as it is not working for me yet (Because of my low WPM speed).
+- Added the stand-alone Shift key in the Function/Number layer, which I use it with [IntelliJ Idea](https://www.jetbrains.com/idea/)
+- Updating the documentation
+  - Added the [Caps Word](https://zmk.dev/docs/behaviors/caps-word) in v2.0.0
+- Cleanup the commented code from the keymap config file
+- Updated the keymap svg file with the changes
+
+![jinius keymap layout](img/corne.svg)
+
 
 
 ## Highlight [v2.1.0]
-- Added the keyboard layout svg using [Keymap Drawer](/caksoylar/keymap-drawer)
+- Added the keyboard layout svg using [Keymap Drawer](https://github.com/caksoylar/keymap-drawer)
 - Used the default keymap drawer config as explained
-
-<img src="img/corne.svg" alt="jinius keymap layout" width="100%" />
-
 
 ## Highlight [v2.0.0]
 - Layers as mentioned by [Miryoku ZMK](https://github.com/manna-harbour/miryoku_zmk)
@@ -39,10 +47,11 @@ I use this for my work and personal Mac and my Old Windows laptop revitalized us
 ## Items for next release
 - Urob's [zmk-nodefree-config](https://github.com/urob/zmk-nodefree-config) to add functionality
 - Enable local and github action build for all the release versions
-- Use [Caps Word](https://zmk.dev/docs/behaviors/caps-word) in place of <kbd>Caps Lock</kbd>.
+- ~~Use [Caps Word](https://zmk.dev/docs/behaviors/caps-word) in place of <kbd>Caps Lock</kbd>~~ [v2.0.0](README.md#highlight-v200).
 - Configure [mouse keys on the host](https://en.wikipedia.org/wiki/Mouse_keys) by following the steps mentioned at [Miryoku ZMK](https://github.com/manna-harbour/miryoku_zmk#mouse-keys)
 - Provide a keymap image file using one of these options (or may be all of them): ~~[keymap-drawer](https://github.com/caksoylar/keymap-drawer)~~ [v2.1.0](README.md#highlight-v210), [Keymap Editor](https://github.com/nickcoutsos/keymap-editor#keymap-editor)
 - Register the repo with [KeymapDB](https://keymapdb.com/) at some point in time
+- Update the keymap image file with more details similar to [minusfive](https://github.com/minusfive/zmk-config/tree/main) keymap_drawer config file
 
 
 ## References
