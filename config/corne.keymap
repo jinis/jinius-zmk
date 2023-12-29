@@ -376,7 +376,7 @@
 // ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
 // ├─  12 <LM5>   ─┼─  13 <LM4>   ─┼─  14 <LM3>   ─┼─  15 <LM2>   ─┼─  16 <LM1>   ─┼─  17 <LM0>   ─┤   ├─  18 <RM0>   ─┼─  19 <RM1>   ─┼─  20 <RM2>   ─┼─  21 <RM3>   ─┼─  22 <RM4>   ─┼─  23 <RM5>   ─┤
 // ├─     TAB     ─┼─  LCTRL / _  ─┼─  LALT / +   ─┼─  LGUI / {   ─┼─  LSHFT / }  ─┼─      |      ─┤   ├─    - / _    ─┼─RSHFT / = / +─┼─ RGUI / [ / {─┼─ RALT / ] / }─┼─RCTRL / \ / |─┼─    RETURN   ─┤
-        &kp TAB     &hml LCTRL UNDER &hml LALT PLUS  &hml LGUI LBRC &hml LSHFT RBRC    &kp PIPE           &kp MINUS     &hmr RSHFT EQUAL &hmr RGUI LBKT  &hmr RALT LBKT &hmr RCTRL BSLH     &kp RET
+        &kp TAB     &hml LCTRL UNDER &hml LALT PLUS  &hml LGUI LBRC &hml LSHFT RBRC    &kp PIPE           &kp MINUS     &hmr RSHFT EQUAL &hmr RGUI LBKT  &hmr RALT RBKT &hmr RCTRL BSLH     &kp RET
 // ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
 // ├─  24 <LB5>   ─┼─  25 <LB4>   ─┼─  26 <LB3>   ─┼─  27 <LB2>   ─┼─  28 <LB1>   ─┼─  29 <LB0>   ─┤   ├─  30 <RB0>   ─┼─  31 <RB1>   ─┼─  32 <RB2>   ─┼─  33 <RB3>   ─┼─  34 <RB4>   ─┼─  35 <RB5>   ─┤
 // ├─ SMART SHIFT ─┼─      :      ─┼─      "      ─┼─      <      ─┼─      >      ─┼─      ?      ─┤   ├─    ; / :    ─┼─    ' / "    ─┼─    , / <    ─┼─    . / >    ─┼─   / / ?     ─┼─ SMART SHIFT ─┤
