@@ -32,12 +32,19 @@ I use this for my work and personal Mac and my Old Windows laptop revitalized us
 | Symbol | Key Name |
 |--------|----------|
 | ![control](/img/icons/apple-keyboard-control-custom.png) | Control |
-| ⌥ | Option |
-| ![Command](https://raw.githubusercontent.com/Templarian/MaterialDesign-SVG/master/svg/apple-keyboard-control.svg?sanitize=true) | Command |
+| ![control](/img/icons/apple-keyboard-option-custom.png) | Option |
+| ![Command](/img/icons/apple-keyboard-command-custom.png) | Command |
+| ![Command](/img/icons/backspace-custom.png) | Backspace |
+| ![Command](/img/icons/backspace-reverse-outline-custom.png) | Delete |
+| ![Command](/img/icons/tilde-custom.png) | Tilde |
+| ![Command](/img/icons/keyboard-esc-custom.png) | Escape |
+| ![Command](/img/icons/keyboard-tab-custom.png) | Tab |
+| ![Command](/img/icons/keyboard-tab-reverse-custom.png) | Reverse Tab |
+| ![Command](/img/icons/keyboard-return-custom.png) | Return |
+| ![Command](/img/icons/apple-keyboard-caps-custom.png) | Caps Lock |
+| ![Command](/img/icons/apple-keyboard-shift-custom.png) | Shift |
 
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>apple-keyboard-command</title><path d="M6,2A4,4 0 0,1 10,6V8H14V6A4,4 0 0,1 18,2A4,4 0 0,1 22,6A4,4 0 0,1 18,10H16V14H18A4,4 0 0,1 22,18A4,4 0 0,1 18,22A4,4 0 0,1 14,18V16H10V18A4,4 0 0,1 6,22A4,4 0 0,1 2,18A4,4 0 0,1 6,14H8V10H6A4,4 0 0,1 2,6A4,4 0 0,1 6,2M16,18A2,2 0 0,0 18,20A2,2 0 0,0 20,18A2,2 0 0,0 18,16H16V18M14,10H10V14H14V10M6,16A2,2 0 0,0 4,18A2,2 0 0,0 6,20A2,2 0 0,0 8,18V16H6M8,6A2,2 0 0,0 6,4A2,2 0 0,0 4,6A2,2 0 0,0 6,8H8V6M18,8A2,2 0 0,0 20,6A2,2 0 0,0 18,4A2,2 0 0,0 16,6V8H18Z" /></svg>
-F0633
 
 
 ## Highlight [v2.1.0]
