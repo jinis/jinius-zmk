@@ -2,7 +2,7 @@
 
 Personal [ZMK firmware](https://github.com/zmkfirmware/zmk/) configuration repo for my 42-keys corne keyboard.
 
-I use this for my work and personal Mac and my Old Windows laptop revitalized using Linux Mint. 
+I use this for my work and personal Mac and my Old Windows laptop revitalized using Linux Mint.
 
 ---
 
@@ -11,7 +11,7 @@ I use this for my work and personal Mac and my Old Windows laptop revitalized us
 
 > [!NOTE]\
 > This layout is primarily designed for learning **[Colemak-DH](https://colemakmods.github.io/mod-dh/)** to help me migrate from **QWERTY** layout, where I have built my muscle memory.
-> 
+>
 
 ---
 ## Hightligh [v2.2.0]
@@ -31,18 +31,23 @@ I use this for my work and personal Mac and my Old Windows laptop revitalized us
 
 | Symbol | Key Name |
 |--------|----------|
-| ![control](/img/icons/apple-keyboard-control-custom.png) | Control |
-| ![control](/img/icons/apple-keyboard-option-custom.png) | Option |
-| ![Command](/img/icons/apple-keyboard-command-custom.png) | Command |
-| ![Command](/img/icons/backspace-custom.png) | Backspace |
-| ![Command](/img/icons/backspace-reverse-outline-custom.png) | Delete |
-| ![Command](/img/icons/tilde-custom.png) | Tilde |
-| ![Command](/img/icons/keyboard-esc-custom.png) | Escape |
-| ![Command](/img/icons/keyboard-tab-custom.png) | Tab |
-| ![Command](/img/icons/keyboard-tab-reverse-custom.png) | Reverse Tab |
-| ![Command](/img/icons/keyboard-return-custom.png) | Return |
-| ![Command](/img/icons/apple-keyboard-caps-custom.png) | Caps Lock |
-| ![Command](/img/icons/apple-keyboard-shift-custom.png) | Shift |
+| ![control](./img/icons/apple-keyboard-control-custom.png) | Control |
+| ![control](./img/icons/apple-keyboard-option-custom.png) | Option |
+| ![Command](./img/icons/apple-keyboard-command-custom.png) | Command |
+| ![Command](./img/icons/backspace-custom.png) | Backspace |
+| ![Command](./img/icons/backspace-reverse-outline-custom.png) | Delete |
+| ![Command](./img/icons/tilde-custom.png) | Tilde |
+| ![Command](./img/icons/keyboard-esc-custom.png) | Escape |
+| ![Command](./img/icons/keyboard-tab-custom.png) | Tab |
+| ![Command](./img/icons/keyboard-tab-reverse-custom.png) | Reverse Tab |
+| ![Command](./img/icons/keyboard-return-custom.png) | Return |
+| ![Command](./img/icons/apple-keyboard-caps-custom.png) | Caps Lock |
+| ![Command](./img/icons/apple-keyboard-shift-custom.png) | Shift |
+| ![Command](./img/icons/keyboard-space-custom.png) | Space |
+| ![Command](./img/icons/gesture-tap-hold-custom.png) | Press & Hold |
+| ![Command](./img/icons/close-box-custom.png) | No Key |
+| ![Command](./img/icons/usb-custom.png) | USB Connect |
+| ![Command](./img/icons/.png) | USB Connect |
 
 
 
