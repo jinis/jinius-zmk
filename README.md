@@ -29,25 +29,39 @@ I use this for my work and personal Mac and my Old Windows laptop revitalized us
 
 ## Legend
 
-| Symbol | Key Name |
-|--------|----------|
-| ![control](./img/icons/apple-keyboard-control-custom.png) | Control |
-| ![control](./img/icons/apple-keyboard-option-custom.png) | Option |
-| ![Command](./img/icons/apple-keyboard-command-custom.png) | Command |
-| ![Command](./img/icons/backspace-custom.png) | Backspace |
-| ![Command](./img/icons/backspace-reverse-outline-custom.png) | Delete |
-| ![Command](./img/icons/tilde-custom.png) | Tilde |
-| ![Command](./img/icons/keyboard-esc-custom.png) | Escape |
-| ![Command](./img/icons/keyboard-tab-custom.png) | Tab |
-| ![Command](./img/icons/keyboard-tab-reverse-custom.png) | Reverse Tab |
-| ![Command](./img/icons/keyboard-return-custom.png) | Return |
-| ![Command](./img/icons/apple-keyboard-caps-custom.png) | Caps Lock |
-| ![Command](./img/icons/apple-keyboard-shift-custom.png) | Shift |
-| ![Command](./img/icons/keyboard-space-custom.png) | Space |
-| ![Command](./img/icons/gesture-tap-hold-custom.png) | Press & Hold |
-| ![Command](./img/icons/close-box-custom.png) | No Key |
-| ![Command](./img/icons/usb-custom.png) | USB Connect |
-| ![Command](./img/icons/.png) | USB Connect |
+| Symbol | Key Name | Symbol | Key Name |
+|--------|----------|--------|----------|
+| ![Command](./img/icons/apple-keyboard-command-custom.png) | Command | ![control](./img/icons/apple-keyboard-control-custom.png) | Control |
+| ![control](./img/icons/apple-keyboard-option-custom.png) | Option | ![Command](./img/icons/apple-keyboard-shift-custom.png) | Shift |
+| ![Command](./img/icons/backspace-custom.png) | Backspace | ![Command](./img/icons/backspace-reverse-outline-custom.png) | Delete |
+| | | | |
+| ![Command](./img/icons/tilde-custom.png) | Tilde | ![Command](./img/icons/keyboard-esc-custom.png) | Escape |
+| ![Command](./img/icons/keyboard-tab-custom.png) | Tab | ![Command](./img/icons/keyboard-tab-reverse-custom.png) | Reverse Tab |
+| ![Command](./img/icons/keyboard-space-custom.png) | Space | ![Command](./img/icons/keyboard-return-custom.png) | Return |
+| | | | |
+| ![Command](./img/icons/apple-keyboard-caps-custom.png) | Caps Lock | ![Command](./img/icons/gesture-tap-hold-custom.png) | Press & Hold |
+| ![Command](./img/icons/close-box-custom.png) | No Key | | |
+| | | | |
+| ![Command](./img/icons/usb-custom.png) | USB Connect | ![Command](./img/icons/progress-upload-custom.png) | Bootloader |
+| ![Command](./img/icons/bluetooth-custom.png) | Bluetooth Enable | ![Command](./img/icons/bluetooth-off-custom.png) | Bluetooth Clear |
+| ![Command](./img/icons/restore.png) | Reset | ![Command](./img/icons/bluetooth-connect-custom.png) | Bluetooth Connect |
+| | | | |
+| ![Command](./img/icons/arrow-up-bold-outline-custom.png) | Up Arrow | ![Command](./img/icons/arrow-down-bold-outline-custom.png) | Down Arrow |
+| ![Command](./img/icons/arrow-left-bold-outline-custom.png) | Left Arrow | ![Command](./img/icons/arrow-right-bold-outline-custom.png) | Right Arrow |
+| ![Command](./img/icons/home-custom.png) | Home |
+| ![Command](./img/icons/book-arrow-up-outline-custom.png) | Page Up | ![Command](./img/icons/book-arrow-down-outline-custom.png) | Page Down |
+| | | | |
+| ![Command](./img/icons/lightbulb-on-outline-custom.png) | Brightness Up | ![Command](./img/icons/lightbulb-on-custom.png) | Brightness Down |
+
+| Layer Code | Layer Name | Layer Description |
+|------------|------------|-------------------|
+| QWT | QWERTY Layer | Default QWERTY Layer for Mac |
+| CDH | Colemak-DH Layer | Toggle layer with Colemak-DH keyboard setup |
+| FNUM | Function & Numbers Layer | Function keys and Numpad layer |
+| SYM | Symbols Layer | Layer containing the various symbols |
+| BTNV | Bluetooth & Navigation Layer | Bluetooth Settings and Navigation Keys layer |
+
+
 
 
 
