@@ -2,7 +2,7 @@
 
 Personal [ZMK firmware](https://github.com/zmkfirmware/zmk/) configuration repo for my 42-keys corne keyboard.
 
-I use this for my work and personal Mac and my Old Windows laptop revitalized using Linux Mint. 
+I use this for my work and personal Mac and my Old Windows laptop revitalized using Linux Mint.
 
 ---
 
@@ -11,17 +11,64 @@ I use this for my work and personal Mac and my Old Windows laptop revitalized us
 
 > [!NOTE]\
 > This layout is primarily designed for learning **[Colemak-DH](https://colemakmods.github.io/mod-dh/)** to help me migrate from **QWERTY** layout, where I have built my muscle memory.
-> 
+>
 
 ---
+## Hightligh [v2.2.0]
+- Switched to [Momentary Layers](https://zmk.dev/docs/behaviors/layers#momentary-layer) from [Toggle Layer](https://zmk.dev/docs/behaviors/layers#toggle-layer)
+- Updated the [Timeless homerow mods](https://github.com/urob/zmk-config#timeless-homerow-mods) and removed the `hold-trigger-on-release` configuration as it is not working for me yet (Because of my low WPM speed).
+- Added the stand-alone Shift key in the Function/Number layer, which I use it with [IntelliJ Idea](https://www.jetbrains.com/idea/)
+- Updating the documentation
+  - Added the [Caps Word](https://zmk.dev/docs/behaviors/caps-word) in v2.0.0
+- Cleanup the commented code from the keymap config file
+- Updated the keymap svg file with the changes
+
+![jinius keymap layout](img/corne.svg)
+
+> Image created using [keymap-drawer](https://github.com/caksoylar/keymap-drawer)
+
+## Legend
+
+| Symbol | Key Name | Symbol | Key Name |
+|--------|----------|--------|----------|
+| ![Command](./img/icons/apple-keyboard-command-custom.png) | Command | ![control](./img/icons/apple-keyboard-control-custom.png) | Control |
+| ![control](./img/icons/apple-keyboard-option-custom.png) | Option | ![Command](./img/icons/apple-keyboard-shift-custom.png) | Shift |
+| ![Command](./img/icons/backspace-custom.png) | Backspace | ![Command](./img/icons/backspace-reverse-outline-custom.png) | Delete |
+| | | | |
+| ![Command](./img/icons/tilde-custom.png) | Tilde | ![Command](./img/icons/keyboard-esc-custom.png) | Escape |
+| ![Command](./img/icons/keyboard-tab-custom.png) | Tab | ![Command](./img/icons/keyboard-tab-reverse-custom.png) | Reverse Tab |
+| ![Command](./img/icons/keyboard-space-custom.png) | Space | ![Command](./img/icons/keyboard-return-custom.png) | Return |
+| | | | |
+| ![Command](./img/icons/apple-keyboard-caps-custom.png) | Caps Lock | ![Command](./img/icons/gesture-tap-hold-custom.png) | Press & Hold |
+| ![Command](./img/icons/close-box-custom.png) | No Key | | |
+| | | | |
+| ![Command](./img/icons/usb-custom.png) | USB Connect | ![Command](./img/icons/progress-upload-custom.png) | Bootloader |
+| ![Command](./img/icons/bluetooth-custom.png) | Bluetooth Enable | ![Command](./img/icons/bluetooth-off-custom.png) | Bluetooth Clear |
+| ![Command](./img/icons/restore.png) | Reset | ![Command](./img/icons/bluetooth-connect-custom.png) | Bluetooth Connect |
+| | | | |
+| ![Command](./img/icons/arrow-up-bold-outline-custom.png) | Up Arrow | ![Command](./img/icons/arrow-down-bold-outline-custom.png) | Down Arrow |
+| ![Command](./img/icons/arrow-left-bold-outline-custom.png) | Left Arrow | ![Command](./img/icons/arrow-right-bold-outline-custom.png) | Right Arrow |
+| ![Command](./img/icons/home-custom.png) | Home |
+| ![Command](./img/icons/book-arrow-up-outline-custom.png) | Page Up | ![Command](./img/icons/book-arrow-down-outline-custom.png) | Page Down |
+| | | | |
+| ![Command](./img/icons/lightbulb-on-outline-custom.png) | Brightness Up | ![Command](./img/icons/lightbulb-on-custom.png) | Brightness Down |
+
+| Layer Code | Layer Name | Layer Description |
+|------------|------------|-------------------|
+| QWT | QWERTY Layer | Default QWERTY Layer for Mac |
+| CDH | Colemak-DH Layer | Toggle layer with Colemak-DH keyboard setup |
+| FNUM | Function & Numbers Layer | Function keys and Numpad layer |
+| SYM | Symbols Layer | Layer containing the various symbols |
+| BTNV | Bluetooth & Navigation Layer | Bluetooth Settings and Navigation Keys layer |
+
+
+
+
 
 
 ## Highlight [v2.1.0]
-- Added the keyboard layout svg using [Keymap Drawer](/caksoylar/keymap-drawer)
+- Added the keyboard layout svg using [Keymap Drawer](https://github.com/caksoylar/keymap-drawer)
 - Used the default keymap drawer config as explained
-
-<img src="img/corne.svg" alt="jinius keymap layout" width="100%" />
-
 
 ## Highlight [v2.0.0]
 - Layers as mentioned by [Miryoku ZMK](https://github.com/manna-harbour/miryoku_zmk)
@@ -39,10 +86,11 @@ I use this for my work and personal Mac and my Old Windows laptop revitalized us
 ## Items for next release
 - Urob's [zmk-nodefree-config](https://github.com/urob/zmk-nodefree-config) to add functionality
 - Enable local and github action build for all the release versions
-- Use [Caps Word](https://zmk.dev/docs/behaviors/caps-word) in place of <kbd>Caps Lock</kbd>.
+- ~~Use [Caps Word](https://zmk.dev/docs/behaviors/caps-word) in place of <kbd>Caps Lock</kbd>~~ [v2.0.0](README.md#highlight-v200).
 - Configure [mouse keys on the host](https://en.wikipedia.org/wiki/Mouse_keys) by following the steps mentioned at [Miryoku ZMK](https://github.com/manna-harbour/miryoku_zmk#mouse-keys)
 - Provide a keymap image file using one of these options (or may be all of them): ~~[keymap-drawer](https://github.com/caksoylar/keymap-drawer)~~ [v2.1.0](README.md#highlight-v210), [Keymap Editor](https://github.com/nickcoutsos/keymap-editor#keymap-editor)
 - Register the repo with [KeymapDB](https://keymapdb.com/) at some point in time
+- Update the keymap image file with more details similar to [minusfive](https://github.com/minusfive/zmk-config/tree/main) keymap_drawer config file
 
 
 ## References
