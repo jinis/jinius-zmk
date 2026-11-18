@@ -19,5 +19,7 @@ include:
     # shield: corne_right nice_view_adapter nice_view
   - board: nice_nano@2//zmk
     shield: corne_left nice_view_adapter nice_view
+    artifact-name: corne_left-nice_nano_v2-zmk
   - board: nice_nano@2//zmk
     shield: corne_right nice_view_adapter nice_view
+    artifact-name: corne_right-nice_nano_v2-zmk

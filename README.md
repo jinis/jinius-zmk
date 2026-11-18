@@ -14,14 +14,12 @@ I use this for my work and personal Mac and my Old Windows laptop revitalized us
 >
 
 ---
-## Hightligh [v2.2.0]
-- Switched to [Momentary Layers](https://zmk.dev/docs/behaviors/layers#momentary-layer) from [Toggle Layer](https://zmk.dev/docs/behaviors/layers#toggle-layer)
-- Updated the [Timeless homerow mods](https://github.com/urob/zmk-config#timeless-homerow-mods) and removed the `hold-trigger-on-release` configuration as it is not working for me yet (Because of my low WPM speed).
-- Added the stand-alone Shift key in the Function/Number layer, which I use it with [IntelliJ Idea](https://www.jetbrains.com/idea/)
-- Updating the documentation
-  - Added the [Caps Word](https://zmk.dev/docs/behaviors/caps-word) in v2.0.0
-- Cleanup the commented code from the keymap config file
-- Updated the keymap svg file with the changes
+
+## Highlight [v3.0.0]
+- Added separate layers with Windows like control changes and applied the Bluetooth macro as mentioned in [How To Mimic QMK’s CG_TOGG or AG_TOGG OS Key Switching Behavior In ZMK](https://flatfootfox.com/how-to-mimic-qmks-cg_togg-or-ag_togg-os-key-switching-behavior-in-zmk/)
+- Update the Homerow mods control for the Mac from `CAGS/(⎈⎇◆⇧)` to `GASC/(◆⎇⇧⎈)` - [A guide to home row mods](https://precondition.github.io/home-row-mods)
+- Windows layout controls are set to `GCSA/(◆⎈⇧⎇)`.
+
 
 ![jinius keymap layout](img/corne.svg)
 
@@ -61,9 +59,18 @@ I use this for my work and personal Mac and my Old Windows laptop revitalized us
 | SYM | Symbols Layer | Layer containing the various symbols |
 | BTNV | Bluetooth & Navigation Layer | Bluetooth Settings and Navigation Keys layer |
 
+---
 
 
 
+## Highlight [v2.2.0]
+- Switched to [Momentary Layers](https://zmk.dev/docs/behaviors/layers#momentary-layer) from [Toggle Layer](https://zmk.dev/docs/behaviors/layers#toggle-layer)
+- Updated the [Timeless homerow mods](https://github.com/urob/zmk-config#timeless-homerow-mods) and removed the `hold-trigger-on-release` configuration as it is not working for me yet (Because of my low WPM speed).
+- Added the stand-alone Shift key in the Function/Number layer, which I use it with [IntelliJ Idea](https://www.jetbrains.com/idea/)
+- Updating the documentation
+  - Added the [Caps Word](https://zmk.dev/docs/behaviors/caps-word) in v2.0.0
+- Cleanup the commented code from the keymap config file
+- Updated the keymap svg file with the changes
 
 
 ## Highlight [v2.1.0]
