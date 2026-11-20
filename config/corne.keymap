@@ -20,14 +20,14 @@
 // DEFINES LAYERS - START ******************************************************
 // Layer shotcuts defined for easier identification.
 // The order must match in which they are defined below.
-#define QWT_MC 0
-#define CDH_MC 1
-#define FNUM_MC 2
-#define SYM_MC 3
-#define QWT_WN 4
-#define CDH_WN 5
-#define FNUM_WN 6
-#define SYM_WN 7
+#define M_QWT 0
+#define M_CDH 1
+#define M_FNUM 2
+#define M_SYM 3
+#define W_QWT 4
+#define W_CDH 5
+#define W_FNUM 6
+#define W_SYM 7
 #define BTNV 8
 // DEFINES LAYERS - ENDS *******************************************************
 // DEFINES BLUETOOTH PROFILE SELECTION - START *********************************
@@ -295,16 +295,29 @@
   // MACROS DEFINITIONS - START ************************************************
   macros {
     mac_bt: mac_bt {
-      compatible = "zmk,behavior-macro-one-param";
-      #binding-cells = <1>;
-      bindings = <&macro_param_1to1>, <&macro_tap &bt BT_SEL MACRO_PLACEHOLDER>, <&macro_tap &tog QWT_MC>;
+      compatible = "zmk,zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&macro_tap &bt BTP0>, <&macro_tap &tog M_QWT>;
     };
 
     win_bt: win_bt {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&macro_tap &bt BTP4>, <&macro_tap &tog W_QWT>;
+    };
+
+    mac_bt_p: mac_bt_p {
       compatible = "zmk,behavior-macro-one-param";
       #binding-cells = <1>;
-      bindings = <&macro_param_1to1>, <&macro_tap &bt BT_SEL MACRO_PLACEHOLDER>, <&macro_tap &tog QWT_WN>;
+      bindings = <&macro_param_1to1>, <&macro_tap &bt BT_SEL MACRO_PLACEHOLDER>, <&macro_tap &tog M_QWT>;
     };
+
+    win_bt_p: win_bt_p {
+      compatible = "zmk,behavior-macro-one-param";
+      #binding-cells = <1>;
+      bindings = <&macro_param_1to1>, <&macro_tap &bt BT_SEL MACRO_PLACEHOLDER>, <&macro_tap &tog W_QWT>;
+    };
+  };
   };
   // MACROS DEFINITIONS - END **************************************************
 // MACROS - END ****************************************************************
@@ -316,8 +329,8 @@
     compatible = "zmk,keymap";
     // LAYERS - START **********************************************************
     // QWERTY layer - For Mac
-    qwerty_bt_layer_mac {
-      display-name = "QWT_MC";
+    qwerty_layer_mac {
+      display-name = "M_QWT";
       bindings = <
 // ╭────-──────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
 // ├─   0 <LT5>   ─┼─   1 <LT4>   ─┼─   2 <LT3>   ─┼─   3 <LT2>   ─┼─   4 <LT1>   ─┼─   5 <LT0>   ─┤   ├─   6 <RT0>   ─┼─   7 <RT1>   ─┼─   8 <RT2>   ─┼─   9 <RT3>   ─┼─  10 <RT4>   ─┼─  11 <RT5>   ─┤
@@ -326,22 +339,22 @@
 // ├─────-─────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
 // ├─  12 <LM5>   ─┼─  13 <LM4>   ─┼─  14 <LM3>   ─┼─  15 <LM2>   ─┼─  16 <LM1>   ─┼─  17 <LM0>   ─┤   ├─  18 <RM0>   ─┼─  19 <RM1>   ─┼─  20 <RM2>   ─┼─  21 <RM3>   ─┼─  22 <RM4>   ─┼─  23 <RM5>   ─┤
 // ├─     TAB     ─┼─   LGUI / A  ─┼─  LALT / S   ─┼─  LSHFT / D  ─┼─  LCTRL / F  ─┼─      G      ─┤   ├─      H      ─┼─  RCTRL / J  ─┼─ RSHFT / K   ─┼─  RALT / L   ─┼─  RGUI / ;   ─┼─    RETURN   ─┤
-        &kp TAB       &hml LGUI A     &hml LALT S    &hml LSHIFT D    &hml LCTRL F       &kp G               &kp H        &hmr RCTRL J   &hmr RSHIFT K    &hmr RALT L    &hmr RGUI SEMI      &kp RET
+        &kp TAB       &hml LGUI A     &hml LALT S    &hml LSHIFT D    &hml LCTRL F       &kp G               &kp H        &hmr RCTRL J   &hmr RSHFT K    &hmr RALT L    &hmr RGUI SEMI      &kp RET
 // ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
 // ├─  24 <LB5>   ─┼─  25 <LB4>   ─┼─  26 <LB3>   ─┼─  27 <LB2>   ─┼─  28 <LB1>   ─┼─  29 <LB0>   ─┤   ├─  30 <RB0>   ─┼─  31 <RB1>   ─┼─  32 <RB2>   ─┼─  33 <RB3>   ─┼─  34 <RB4>   ─┼─  35 <RB5>   ─┤
 // ├─ SMART SHIFT ─┼─      Z      ─┼─      X      ─┼─      C      ─┼─      V      ─┼─      B      ─┤   ├─      N      ─┼─      M      ─┼─      ,      ─┼─      .      ─┼─      /      ─┼─ SMART SHIFT ─┤
        &ss_left          &kp Z           &kp X           &kp C           &kp V           &kp B               &kp N           &kp M         &kp COMMA        &kp DOT        &kp FSLH        &ss_caps_r
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
 //                                                 ├─  36 <LH2>   ─┼─  37 <LH1>   ─┼─  38 <LH0>   ─┤   ├─  39 <RH0>   ─┼─  40 <RH1>   ─┼─  41 <RH2>   ─┤
-//                                                 ├─ ALT/OPT/SYM ─┼─  CTRL/FNUM  ─┼─   SPC/CMD   ─┤   ├─   SPC/CMD   ─┼─  CTRL/BTNV  ─┼─ ALT/OPT/CDH ─┤
-                                                  &mosm SYM_MC LALT &mosm FNUM_MC LCTRL &tmt LGUI SPACE &tmt RGUI SPACE &mosm BTNV RCTRL   &ao_cdh_mac_r
+//                                                 ├─ ALT/OPT/SYM ─┼─  CTRL/FNUM  ─┼─   SPC/CMD   ─┤   ├─  SPC/CTRL   ─┼─  CTRL/BTNV  ─┼─ ALT/OPT/CDH ─┤
+                                                  &mosm M_SYM LALT &mosm M_FNUM LCTRL &tmt LGUI SPACE &tmt RCTRL SPACE &mosm BTNV RCTRL  &ao_cdh_mac_r
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
       >;
     };
 
     // Colemak Mod-DH - For Mac: Primary layer. To learn and and use
-    colemakdh_bt_layer_mac {
-      display-name = "CDH_MC";
+    colemakdh_layer_mac {
+      display-name = "M_CDH";
       bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
 // ├─   0 <LT5>   ─┼─   1 <LT4>   ─┼─   2 <LT3>   ─┼─   3 <LT2>   ─┼─   4 <LT1>   ─┼─   5 <LT0>   ─┤   ├─   6 <RT0>   ─┼─   7 <RT1>   ─┼─   8 <RT2>   ─┼─   9 <RT3>   ─┼─  10 <RT4>   ─┼─  11 <RT5>   ─┤
@@ -357,15 +370,15 @@
        &ss_left         &kp Z           &kp X           &kp C           &kp D            &kp V               &kp K           &kp H         &kp COMMA        &kp DOT        &kp FSLH        &ss_caps_r
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
 //                                                 ├─  36 <LH2>   ─┼─  37 <LH1>   ─┼─  38 <LH0>   ─┤   ├─  39 <RH0>   ─┼─  40 <RH1>   ─┼─  41 <RH2>   ─┤
-//                                                 ├─ ALT/OPT/SYM ─┼─  CTRL/FNUM  ─┼─   SPC/CMD   ─┤   ├─   SPC/CMD   ─┼─  CTRL/BTNV  ─┼─ ALT/OPT/CDH ─┤
-                                                   &mosm SYM_MC LALT &mosm FNUM_MC LCTRL &tmt LGUI SPACE &tmt RGUI SPACE &mosm BTNV RCTRL &ao_cdh_mac_r
+//                                                 ├─ ALT/OPT/SYM ─┼─  CTRL/FNUM  ─┼─   SPC/CMD   ─┤   ├─  SPC/CTRL   ─┼─  CTRL/BTNV  ─┼─ ALT/OPT/CDH ─┤
+                                                   &mosm M_SYM LALT &mosm M_FNUM LCTRL &tmt LGUI SPACE &tmt RCTRL SPACE &mosm BTNV RCTRL &ao_cdh_mac_r
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
       >;
     };
 
     // Function and Number layer - For Mac
     function_number_layer_mac {
-      display-name = "FNUM_MC";
+      display-name = "M_FNUM";
       bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
 // ├─   0 <LT5>   ─┼─   1 <LT4>   ─┼─   2 <LT3>   ─┼─   3 <LT2>   ─┼─   4 <LT1>   ─┼─   5 <LT0>   ─┤   ├─   6 <RT0>   ─┼─   7 <RT1>   ─┼─   8 <RT2>   ─┼─   9 <RT3>   ─┼─  10 <RT4>   ─┼─  11 <RT5>   ─┤
@@ -373,23 +386,23 @@
        &kp GRAVE        &kp F1          &kp F2          &kp F3          &kp F4            XXX             &kp FSLH         &kp N7          &kp N8          &kp N9          &kp STAR        &bkspc_del
 // ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
 // ├─  12 <LM5>   ─┼─  13 <LM4>   ─┼─  14 <LM3>   ─┼─  15 <LM2>   ─┼─  16 <LM1>   ─┼─  17 <LM0>   ─┤   ├─  18 <RM0>   ─┼─  19 <RM1>   ─┼─  20 <RM2>   ─┼─  21 <RM3>   ─┼─  22 <RM4>   ─┼─  23 <RM5>   ─┤
-// ├─     TAB     ─┼─  LGUI / F5  ─┼─  LALT / F6  ─┼─  LSHFT / F7 ─┼─  LCTRL / F8 ─┼─    LSHFT    ─┤   ├─      .      ─┼─       4     ─┼─       5     ─┼─       6     ─┼─       -     ─┼─    RETURN   ─┤
-        &kp TAB       &hml LGUI F5    &hml LALT F6   &hml LSHFT F7   &hml LCTRL F8     &kp LSHFT           &kp DOT          &kp N4          &kp N5          &kp N6         &kp MINUS         &kp RET
+// ├─     TAB     ─┼─  LGUI / F5  ─┼─  LALT / F6  ─┼─  LSHFT / F7 ─┼─  LCTRL / F8 ─┼─    LSHFT    ─┤   ├─      .      ─┼─  RCTRL / 4  ─┼─  RSHFT / 5  ─┼─   RALT / 6  ─┼─   RGUI / -  ─┼─    RETURN   ─┤
+        &kp TAB       &hml LGUI F5    &hml LALT F6   &hml LSHFT F7   &hml LCTRL F8     &kp LSHFT           &kp DOT       &hmr RCTRL N4   &hmr RSHFT N5   &hmr RALT N6   &hmr RGUI MINUS      &kp RET
 // ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
 // ├─  24 <LB5>   ─┼─  25 <LB4>   ─┼─  26 <LB3>   ─┼─  27 <LB2>   ─┼─  28 <LB1>   ─┼─  29 <LB0>   ─┤   ├─  30 <RB0>   ─┼─  31 <RB1>   ─┼─  32 <RB2>   ─┼─  33 <RB3>   ─┼─  34 <RB4>   ─┼─  35 <RB5>   ─┤
 // ├─ SMART SHIFT ─┼─      F9     ─┼─     F10     ─┼─      F11    ─┼─      F12    ─┼─     NONE    ─┤   ├─      0      ─┼─      1      ─┼─      2      ─┼─      3      ─┼─      +      ─┼─ SMART SHIFT ─┤
        &ss_left         &kp F9          &kp F10         &kp F11          &kp F12          XXX               &kp N0          &kp N1          &kp N2          &kp N3          &kp PLUS       &ss_caps_r
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
 //                                                 ├─  36 <LH2>   ─┼─  37 <LH1>   ─┼─  38 <LH0>   ─┤   ├─  39 <RH0>   ─┼─  40 <RH1>   ─┼─  41 <RH2>   ─┤
-//                                                 ├─   ALT/OPT   ─┼─    ___      ─┼─   SPC/CMD   ─┤   ├─   SPC/CMD   ─┼─  CTRL/BTNV  ─┼─   ALT/OPT   ─┤
-                                                       &kp LALT          ___        &tmt LGUI SPACE     &tmt RGUI SPACE    &kp RCTRL       &kp RALT
+//                                                 ├─   ALT/OPT   ─┼─    ___      ─┼─   SPC/CMD   ─┤   ├─  SPC/CTRL   ─┼─    CTRL     ─┼─   ALT/OPT   ─┤
+                                                       &kp LALT          ___        &tmt LGUI SPACE     &tmt RCTRL SPACE   &kp RCTRL       &kp RALT
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
       >;
     };
 
     // Symbols layer - For Mac
     symbols_layer_mac {
-      display-name = "SYM_MC";
+      display-name = "M_SYM";
       bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
 // ├─   0 <LT5>   ─┼─   1 <LT4>   ─┼─   2 <LT3>   ─┼─   3 <LT2>   ─┼─   4 <LT1>   ─┼─   5 <LT0>   ─┤   ├─   6 <RT0>   ─┼─   7 <RT1>   ─┼─   8 <RT2>   ─┼─   9 <RT3>   ─┼─  10 <RT4>   ─┼─  11 <RT5>   ─┤
@@ -412,8 +425,8 @@
     };
 
     // QWERTY layer - For WIN
-    qwerty_bt_layer_win {
-      display-name = "QWT_WN";
+    qwerty_layer_win {
+      display-name = "W_QWT";
       bindings = <
 // ╭────-──────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
 // ├─   0 <LT5>   ─┼─   1 <LT4>   ─┼─   2 <LT3>   ─┼─   3 <LT2>   ─┼─   4 <LT1>   ─┼─   5 <LT0>   ─┤   ├─   6 <RT0>   ─┼─   7 <RT1>   ─┼─   8 <RT2>   ─┼─   9 <RT3>   ─┼─  10 <RT4>   ─┼─  11 <RT5>   ─┤
@@ -422,7 +435,7 @@
 // ├─────-─────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
 // ├─  12 <LM5>   ─┼─  13 <LM4>   ─┼─  14 <LM3>   ─┼─  15 <LM2>   ─┼─  16 <LM1>   ─┼─  17 <LM0>   ─┤   ├─  18 <RM0>   ─┼─  19 <RM1>   ─┼─  20 <RM2>   ─┼─  21 <RM3>   ─┼─  22 <RM4>   ─┼─  23 <RM5>   ─┤
 // ├─     TAB     ─┼─   LGUI / A  ─┼─  LCTRL / S  ─┼─  LSHFT / D  ─┼─  LALT / F   ─┼─      G      ─┤   ├─      H      ─┼─  RALT / J   ─┼─ RSHFT / K   ─┼─  RCTRL / L  ─┼─  RGUI / ;   ─┼─    RETURN   ─┤
-        &kp TAB       &hml LGUI A    &hml LCTRL S    &hml LSHIFT D    &hml LALT F       &kp G               &kp H         &hmr RALT J    &hmr RSHIFT K   &hmr RCTRL L    &hmr RGUI SEMI      &kp RET
+        &kp TAB       &hml LGUI A    &hml LCTRL S    &hml LSHIFT D    &hml LALT F       &kp G               &kp H         &hmr RALT J    &hmr RSHFT K   &hmr RCTRL L    &hmr RGUI SEMI      &kp RET
 // ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
 // ├─  24 <LB5>   ─┼─  25 <LB4>   ─┼─  26 <LB3>   ─┼─  27 <LB2>   ─┼─  28 <LB1>   ─┼─  29 <LB0>   ─┤   ├─  30 <RB0>   ─┼─  31 <RB1>   ─┼─  32 <RB2>   ─┼─  33 <RB3>   ─┼─  34 <RB4>   ─┼─  35 <RB5>   ─┤
 // ├─ SMART SHIFT ─┼─      Z      ─┼─      X      ─┼─      C      ─┼─      V      ─┼─      B      ─┤   ├─      N      ─┼─      M      ─┼─      ,      ─┼─      .      ─┼─      /      ─┼─ SMART SHIFT ─┤
@@ -430,14 +443,14 @@
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
 //                                                 ├─  36 <LH2>   ─┼─  37 <LH1>   ─┼─  38 <LH0>   ─┤   ├─  39 <RH0>   ─┼─  40 <RH1>   ─┼─  41 <RH2>   ─┤
 //                                                 ├─   WIN/SYM   ─┼─  CTRL/FNUM  ─┼─   ALT/SPC   ─┤   ├─   SPC/CTRL  ─┼─  CTRL/BTNV  ─┼─ ALT/OPT/CDH ─┤
-                                                  &mosm SYM_WN LGUI &mosm FNUM_WN LSHFT &tmt LALT SPACE &tmt RCTRL SPACE &mosm BTNV RCTRL &ao_cdh_win_r
+                                                   &mosm W_SYM LGUI &mosm W_FNUM LSHFT &tmt LALT SPACE  &tmt RCTRL SPACE &mosm BTNV RCTRL &ao_cdh_win_r
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
       >;
     };
 
     // Colemak Mod-DH - For WIN: Primary layer. To learn and and use
-    colemakdh_bt_layer_win {
-      display-name = "CDH_WN";
+    colemakdh_layer_win {
+      display-name = "W_CDH";
       bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
 // ├─   0 <LT5>   ─┼─   1 <LT4>   ─┼─   2 <LT3>   ─┼─   3 <LT2>   ─┼─   4 <LT1>   ─┼─   5 <LT0>   ─┤   ├─   6 <RT0>   ─┼─   7 <RT1>   ─┼─   8 <RT2>   ─┼─   9 <RT3>   ─┼─  10 <RT4>   ─┼─  11 <RT5>   ─┤
@@ -454,14 +467,14 @@
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
 //                                                 ├─  36 <LH2>   ─┼─  37 <LH1>   ─┼─  38 <LH0>   ─┤   ├─  39 <RH0>   ─┼─  40 <RH1>   ─┼─  41 <RH2>   ─┤
 //                                                 ├─   WIN/SYM   ─┼─  LSHFT/FNUM ─┼─   SPC/CMD   ─┤   ├─   SPC/CMD   ─┼─  CTRL/BTNV  ─┼─ ALT/OPT/CDH ─┤
-                                                  &mosm SYM_WN LGUI &mosm FNUM_WN LSHFT &tmt LALT SPACE &tmt RCTRL SPACE &mosm BTNV RCTRL &ao_cdh_win_r
+                                                   &mosm W_SYM LGUI &mosm W_FNUM LSHFT &tmt LALT SPACE &tmt RCTRL SPACE &mosm BTNV RCTRL  &ao_cdh_win_r
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
       >;
     };
 
     // Function and Number layer - For WIN
     function_number_layer_win {
-      display-name = "FNUM_WN";
+      display-name = "W_FNUM";
       bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
 // ├─   0 <LT5>   ─┼─   1 <LT4>   ─┼─   2 <LT3>   ─┼─   3 <LT2>   ─┼─   4 <LT1>   ─┼─   5 <LT0>   ─┤   ├─   6 <RT0>   ─┼─   7 <RT1>   ─┼─   8 <RT2>   ─┼─   9 <RT3>   ─┼─  10 <RT4>   ─┼─  11 <RT5>   ─┤
@@ -469,15 +482,15 @@
        &kp GRAVE        &kp F1          &kp F2          &kp F3          &kp F4            XXX             &kp FSLH         &kp N7          &kp N8          &kp N9          &kp STAR        &bkspc_del
 // ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
 // ├─  12 <LM5>   ─┼─  13 <LM4>   ─┼─  14 <LM3>   ─┼─  15 <LM2>   ─┼─  16 <LM1>   ─┼─  17 <LM0>   ─┤   ├─  18 <RM0>   ─┼─  19 <RM1>   ─┼─  20 <RM2>   ─┼─  21 <RM3>   ─┼─  22 <RM4>   ─┼─  23 <RM5>   ─┤
-// ├─     TAB     ─┼─  LGUI / F5  ─┼─ LCTRL / F6  ─┼─  LSHFT / F7 ─┼─  LALT / F8  ─┼─    LSHFT    ─┤   ├─      .      ─┼─       4     ─┼─       5     ─┼─       6     ─┼─       -     ─┼─    RETURN   ─┤
-        &kp TAB       &hml LGUI F5    &hml LCTRL F6   &hml LSHFT F7   &hml LALT F8     &kp LSHFT           &kp DOT          &kp N4          &kp N5          &kp N6         &kp MINUS         &kp RET
+// ├─     TAB     ─┼─  LGUI / F5  ─┼─ LCTRL / F6  ─┼─  LSHFT / F7 ─┼─  LALT / F8  ─┼─    LSHFT    ─┤   ├─      .      ─┼─   RALT / 4  ─┼─  RSHFT / 5  ─┼─  RCTRL / 6  ─┼─   RGUI / -  ─┼─    RETURN   ─┤
+        &kp TAB       &hml LGUI F5   &hml LCTRL F6   &hml LSHFT F7    &hml LALT F8     &kp LSHFT           &kp DOT       &hmr RALT N4   &hmr RSHFT N5    &hmr RCTRL N6  &hmr RGUI MINUS      &kp RET
 // ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
 // ├─  24 <LB5>   ─┼─  25 <LB4>   ─┼─  26 <LB3>   ─┼─  27 <LB2>   ─┼─  28 <LB1>   ─┼─  29 <LB0>   ─┤   ├─  30 <RB0>   ─┼─  31 <RB1>   ─┼─  32 <RB2>   ─┼─  33 <RB3>   ─┼─  34 <RB4>   ─┼─  35 <RB5>   ─┤
 // ├─ SMART SHIFT ─┼─      F9     ─┼─     F10     ─┼─      F11    ─┼─      F12    ─┼─     NONE    ─┤   ├─      0      ─┼─      1      ─┼─      2      ─┼─      3      ─┼─      +      ─┼─ SMART SHIFT ─┤
        &ss_left         &kp F9          &kp F10         &kp F11          &kp F12          XXX               &kp N0          &kp N1          &kp N2          &kp N3          &kp PLUS       &ss_caps_r
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
 //                                                 ├─  36 <LH2>   ─┼─  37 <LH1>   ─┼─  38 <LH0>   ─┤   ├─  39 <RH0>   ─┼─  40 <RH1>   ─┼─  41 <RH2>   ─┤
-//                                                 ├─   ALT/OPT   ─┼─    ___      ─┼─   SPC/CMD   ─┤   ├─   SPC/CMD   ─┼─  CTRL/BTNV  ─┼─   ALT/OPT   ─┤
+//                                                 ├─   ALT/OPT   ─┼─    ___      ─┼─   SPC/CMD   ─┤   ├─   SPC/CMD   ─┼─     CTRLs   ─┼─   ALT/OPT   ─┤
                                                        &kp LGUI          ___        &tmt LALT SPACE     &tmt RCTRL SPACE    &kp RCTRL       &kp RALT
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
       >;
@@ -485,7 +498,7 @@
 
     // Symbols layer - For WIN
     symbols_layer_win {
-      display-name = "SYM_WN";
+      display-name = "W_SYM";
       bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
 // ├─   0 <LT5>   ─┼─   1 <LT4>   ─┼─   2 <LT3>   ─┼─   3 <LT2>   ─┼─   4 <LT1>   ─┼─   5 <LT0>   ─┤   ├─   6 <RT0>   ─┼─   7 <RT1>   ─┼─   8 <RT2>   ─┼─   9 <RT3>   ─┼─  10 <RT4>   ─┼─  11 <RT5>   ─┤
@@ -514,22 +527,20 @@
       bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
 // ├─   0 <LT5>   ─┼─   1 <LT4>   ─┼─   2 <LT3>   ─┼─   3 <LT2>   ─┼─   4 <LT1>   ─┼─   5 <LT0>   ─┤   ├─   6 <RT0>   ─┼─   7 <RT1>   ─┼─   8 <RT2>   ─┼─   9 <RT3>   ─┼─  10 <RT4>   ─┼─  11 <RT5>   ─┤
-// ├─   ESC / ~   ─┼─   OUT USB   ─┼─  BOOTLOADER ─┼─    BT CLR   ─┼─    RESET    ─┼─   OUT BLE   ─┤   ├─     HOME    ─┼─     NONE    ─┼─      UP     ─┼─    NONE     ─┼─    PG UP    ─┼─ <BKSPC/DEL> ─┤
-        &escgrv       &out OUT_USB    &bootloader      &bt BT_CLR      &sys_reset     &out OUT_BLE          &kp HOME          XXX           &kp UP           XXX           &kp PG_UP       &bkspc_del
+// ├─   ESC / ~   ─┼─   OUT USB   ─┼─  BOOTLOADER ─┼─    BT CLR   ─┼─    RESET    ─┼─   OUT BLE   ─┤   ├─     HOME    ─┼─ BTP0 / M_QWT─┼─      UP     ─┼─ BTP4 / W_QWT─┼─    PG UP    ─┼─ <BKSPC/DEL> ─┤
+        &escgrv       &out OUT_USB    &bootloader      &bt BT_CLR      &sys_reset     &out OUT_BLE          &kp HOME       &mac_bt_p         &kp UP        &win_bt_p       &kp PG_UP       &bkspc_del
 // ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
 // ├─  12 <LM5>   ─┼─  13 <LM4>   ─┼─  14 <LM3>   ─┼─  15 <LM2>   ─┼─  16 <LM1>   ─┼─  17 <LM0>   ─┤   ├─  18 <RM0>   ─┼─  19 <RM1>   ─┼─  20 <RM2>   ─┼─  21 <RM3>   ─┼─  22 <RM4>   ─┼─  23 <RM5>   ─┤
 // ├─     TAB     ─┼─ LGUI / NONE ─┼─ LALT / NONE ─┼─ LSHFT / NONE─┼─ LCTRL / NONE─┼─     NONE    ─┤   ├─     END     ─┼─ RCTRL / LEFT─┼─RSHFT / DOWN ─┼─ RALT / RIGHT─┼─ RGUI / PG DN─┼─    RETURN   ─┤
         &kp TAB      &hml LGUI XXX   &hml LALT XXX   &hml LSHFT XXX  &hml LCTRL XXX       XXX               &kp END     &hmr RCTRL LEFT &hmr RSHFT DOWN &hmr RALT RIGHT  &hmr RGUI PG_DN     &kp RET
 // ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
 // ├─  24 <LB5>   ─┼─  25 <LB4>   ─┼─  26 <LB3>   ─┼─  27 <LB2>   ─┼─  28 <LB1>   ─┼─  29 <LB0>   ─┤   ├─  30 <RB0>   ─┼─  31 <RB1>   ─┼─  32 <RB2>   ─┼─  33 <RB3>   ─┼─  34 <RB4>   ─┼─  35 <RB5>   ─┤
-// ├─ SMART SHIFT ─┼─      BT0    ─┼─      BT1    ─┼─      BT2    ─┼─     BT3     ─┼─      BT4    ─┤   ├─     NONE    ─┼─     NONE    ─┼─  BRIGHT UP  ─┼─  BRIGHT DN  ─┼─    NONE     ─┼─ SMART SHIFT ─┤
-//       &ss_left       &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4            XXX             XXX         &kp C_BRI_UP    &kp C_BRI_DN       XXX          &ss_caps_r
-// ├─ SMART SHIFT ─┼─      BT0    ─┼─      BT1    ─┼─      BT2    ─┼─     BT3     ─┼─      BT4    ─┤   ├─     NONE    ─┼─     NONE    ─┼─  BRIGHT UP  ─┼─  BRIGHT DN  ─┼─    NONE     ─┼─ SMART SHIFT ─┤
-       &ss_left        &mac_bt 0       &mac_bt 1       &mac_bt 2       &mac_bt 3       &win_bt 4              XXX             XXX         &kp C_BRI_UP    &kp C_BRI_DN       XXX          &ss_caps_r
+// ├─ SMART SHIFT ─┼─     BT0     ─┼─     BT1     ─┼─     BT2     ─┼─    BT3      ─┼─    BT4      ─┤   ├─    W_QWT    ─┼─    BT_WIN   ─┼─  BRIGHT UP  ─┼─  BRIGHT DN  ─┼─   BT_MAC    ─┼─ SMART SHIFT ─┤
+       &ss_left         &bt BTP0        &bt BTP1        &bt BTP2      &bt BTP3          &bt BTP4           &tog W_QWT       &win_bt       &kp C_BRI_UP    &kp C_BRI_DN      &mac_bt        &ss_caps_r
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
 //                                                 ├─  36 <LH2>   ─┼─  37 <LH1>   ─┼─  38 <LH0>   ─┤   ├─  39 <RH0>   ─┼─  40 <RH1>   ─┼─  41 <RH2>   ─┤
 //                                                 ├─   ALT/OPT   ─┼─     CTRL    ─┼─   SPC/CMD   ─┤   ├─   SPC/CMD   ─┼─     ___     ─┼─   ALT/OPT   ─┤
-                                                       &kp LALT        &kp LCTRL    &tmt LGUI SPACE     &tmt RGUI SPACE       ___          &kp RALT
+                                                       &kp LALT        &kp LCTRL    &tmt LGUI SPACE     &tmt RGUI SPACE       ___           &kp RALT
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
       >;
     };
