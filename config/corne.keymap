@@ -527,7 +527,7 @@
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
 // ├─   0 <LT5>   ─┼─   1 <LT4>   ─┼─   2 <LT3>   ─┼─   3 <LT2>   ─┼─   4 <LT1>   ─┼─   5 <LT0>   ─┤   ├─   6 <RT0>   ─┼─   7 <RT1>   ─┼─   8 <RT2>   ─┼─   9 <RT3>   ─┼─  10 <RT4>   ─┼─  11 <RT5>   ─┤
 // ├─   ESC / ~   ─┼─   OUT USB   ─┼─  BOOTLOADER ─┼─    BT CLR   ─┼─    RESET    ─┼─   OUT BLE   ─┤   ├─     HOME    ─┼─ BTP0 / M_QWT─┼─      UP     ─┼─ BTP4 / W_QWT─┼─    PG UP    ─┼─ <BKSPC/DEL> ─┤
-        &escgrv       &out OUT_USB    &bootloader      &bt BT_CLR      &sys_reset     &out OUT_BLE          &kp HOME       &mac_bt_p         &kp UP        &win_bt_p       &kp PG_UP       &bkspc_del
+        &escgrv       &out OUT_USB    &bootloader      &bt BT_CLR      &sys_reset     &out OUT_BLE          &kp HOME      &mac_bt_p 0        &kp UP       &win_bt_p 4       &kp PG_UP       &bkspc_del
 // ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
 // ├─  12 <LM5>   ─┼─  13 <LM4>   ─┼─  14 <LM3>   ─┼─  15 <LM2>   ─┼─  16 <LM1>   ─┼─  17 <LM0>   ─┤   ├─  18 <RM0>   ─┼─  19 <RM1>   ─┼─  20 <RM2>   ─┼─  21 <RM3>   ─┼─  22 <RM4>   ─┼─  23 <RM5>   ─┤
 // ├─     TAB     ─┼─ LGUI / NONE ─┼─ LALT / NONE ─┼─ LSHFT / NONE─┼─ LCTRL / NONE─┼─     NONE    ─┤   ├─     END     ─┼─ RCTRL / LEFT─┼─RSHFT / DOWN ─┼─ RALT / RIGHT─┼─ RGUI / PG DN─┼─    RETURN   ─┤
