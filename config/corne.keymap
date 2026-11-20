@@ -295,7 +295,7 @@
   // MACROS DEFINITIONS - START ************************************************
   macros {
     mac_bt: mac_bt {
-      compatible = "zmk,zmk,behavior-macro";
+      compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &bt BTP0>, <&macro_tap &tog M_QWT>;
     };
