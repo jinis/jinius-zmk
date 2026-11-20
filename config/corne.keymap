@@ -318,7 +318,6 @@
       bindings = <&macro_param_1to1>, <&macro_tap &bt BT_SEL MACRO_PLACEHOLDER>, <&macro_tap &tog W_QWT>;
     };
   };
-  };
   // MACROS DEFINITIONS - END **************************************************
 // MACROS - END ****************************************************************
 
