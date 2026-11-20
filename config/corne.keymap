@@ -271,7 +271,7 @@
     ao_cdh_mac_r: alt_opt_cdh_mac_right {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&sk RALT>, <&tog CDH_MC>;
+      bindings = <&sk RALT>, <&tog M_CDH>;
       mods = <(MOD_RALT)>;
     };
     /***********************************************
@@ -283,7 +283,7 @@
     ao_cdh_win_r: alt_opt_cdh_win_right {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&sk RALT>, <&tog CDH_WN>;
+      bindings = <&sk RALT>, <&tog W_CDH>;
       mods = <(MOD_RALT)>;
     };
   };
